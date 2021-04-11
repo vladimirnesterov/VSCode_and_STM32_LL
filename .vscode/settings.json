@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "main.h": "c",
+        "stm32f3xx_ll_adc.h": "c",
+        "stm32f3xx.h": "c",
+        "stm32f3xx_hal.h": "c"
+    }
+}

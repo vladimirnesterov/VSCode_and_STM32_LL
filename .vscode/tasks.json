@@ -1,0 +1,70 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+    {
+       "label": "Make Firmware",
+       "type": "shell",
+       "command": "mingw32-make -j4 all TARGET=sr_radar_f303 OPT=\"-O0\" BINPATH=\"${env:VSARM}armcc\/bin\"",
+       "options": {
+           "cwd": "${workspaceRoot}"
+       },
+       "group": {
+           "kind": "build",
+           "isDefault": true
+       },
+       "problemMatcher": []
+    },
+    {
+        "label": "Make Clean",
+        "type": "shell",
+        "command": "make -j4 clean", 
+        "windows": {
+            "command": "del",
+            "args": [
+                //"/S /Q",
+                "build/*"
+                //"obj/*"
+            ]
+        },
+        "options": {
+            "cwd": "${workspaceRoot}"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "problemMatcher": []
+    },
+    {
+        "label": "Load Firmware",
+        "type": "shell",
+        "command": "st-flash write ./build/sr_radar_f303.bin 0x08000000",
+        "options": {
+            "cwd": "${workspaceRoot}"
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        },
+        "problemMatcher": []
+    },
+    {
+        "type": "shell",
+        "label": "arm-none-eabi-gcc.exe\" -mthumb -mcpu=cortex-m4 build active file",
+        "command": "C:/VSARM/armcc/bin/arm-none-eabi-gcc.exe\" -mthumb -mcpu=cortex-m4",
+        "args": [
+            "-std",
+            "gnu11",
+            "-g",
+            "${file}",
+            "-o",
+            "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        ],
+        "options": {
+            "cwd": "C:/VSARM/armcc"
+        }
+    }
+   ]                               
+}

@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+    "name": "Debug (ST-Util)",
+    "type": "cortex-debug",
+    "request": "launch",
+    "servertype": "stutil",
+    "cwd": "${workspaceRoot}",
+    "executable": "./build/sr_radar_f303.elf",
+    "device": "STM32F303RC",
+    "v1": false,
+    "armToolchainPath": "C:\\VSARM\\armcc\\bin",
+    "interface": "swd",
+    "runToMain": true,
+    "svdFile": "${workspaceRoot}/STM32F303.svd"
+    }
+    ]
+}
+
+ 
