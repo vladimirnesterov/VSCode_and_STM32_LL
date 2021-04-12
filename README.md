@@ -4,6 +4,8 @@ There is a [good article by Cristian Dobre](https://hbfsrobotics.com/blog/config
 
 In my case the stlink/v2 debugger was not working with the last version of [Texane’s ST-Link Tools](https://github.com/stlink-org/stlink/releases). But I found that it is working well with the version v1.5.1. The binary files you can find in this repository and simply put them into your "C:\VSARM\stlink\".
 
-If you generate your project from STM32Cube-MX using peripheral Low Layer (LL) driver then you need to change the setting "USE_HAL_DRIVER" to "USE_FULL_LL_DRIVER" in the c_cpp_properties.json file.
+Direct link to mingw installer for win64 is [here](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/installer/mingw-w64-install.exe/download).
+
+If you generate your project from STM32Cube-MX using peripheral Low Layer (LL) driver then you need to change the setting **"USE_HAL_DRIVER"** to **"USE_FULL_LL_DRIVER"** in the c_cpp_properties.json file.
 
 All .json configuration files in ./vscode are made for stm32f303 MCU and you can use them as example for setting your project.
