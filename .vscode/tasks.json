@@ -23,9 +23,7 @@
         "windows": {
             "command": "del",
             "args": [
-                //"/S /Q",
                 "build/*"
-                //"obj/*"
             ]
         },
         "options": {
